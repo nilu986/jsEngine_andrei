@@ -68,13 +68,18 @@ function calculate(x, y) {
 
 console.log(calculate(9, 5));
 
-// JS Runtime Example
-
+// JS Runtime Example -1
 console.log(1); // call stack executes 1
 setTimeout(() => console.log(2), 0); // it sends to web API which send it to call back queue
 setTimeout(() => console.log(5), 0); // it sends to web API which send it to call back queue
 setTimeout(() => console.log(7), 0); // it sends to web API which send it to call back queue
 console.log(3); // executed at second position  now stack is cleared after this execution, event loop is always checking call stack and if it is empty then event loop checks callback queue if something is present there then event loop will push it to call stack.
+
+// JS Runtime Example -2
+
+setTimeout(() => console.log('Settimeout with Promise'));
+Promise.resolve('hi').then((data) => console.log(data));
+console.log('test with promises');
 
 // Stack Overflow Example// Recursive Function
 const list = new Array(6000).join('1.1').split('.');
@@ -84,7 +89,7 @@ function removeItemsFromList() {
 
   if (item) {
     console.log(item);
-    removeItemsFromList();
+    //removeItemsFromList();
   }
 }
 removeItemsFromList();
