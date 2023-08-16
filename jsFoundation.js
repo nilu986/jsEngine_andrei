@@ -1,5 +1,6 @@
 /**
  * Javascript is functional scoped
+ * Context Vs. Scope --> Scope is function based where what is variable environment what is data available in scope while context is object based for this keyword that this points to which context where it is used.
  * Engine provide two phases -- creation and execution
  * while creation it checks var and () , then allocate memory to them
  * var is partially hoisted while functions are fully hoisted
