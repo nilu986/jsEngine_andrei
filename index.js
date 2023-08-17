@@ -1,7 +1,7 @@
 // Import stylesheets
 import './style.css';
 //import { jsEngine } from './jsEngine.js';
-import './jsFoundation.js';
+import './typesInJs.js';
 
 // Write Javascript code!
 const appDiv = document.getElementById('app');
