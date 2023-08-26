@@ -39,7 +39,7 @@ Promise.race([promise1, promise2, promise3, promise4]).then((values) =>
 //Promise with fetch api
 
 const urls = [
-  'https://jsonplaceholder.typicode3.com/posts',
+  'https://jsonplaceholder.typicode.com/posts',
   'https://jsonplaceholder.typicode.com/albums',
   'https://jsonplaceholder.typicode.com/users',
 ];
@@ -64,15 +64,12 @@ Promise.allSettled(
 
 //Async await- no more then is used, clean code and sequence
 try {
-  const getData = async () => {
-    const data = await Promise.all(
-      urls.map((url) => {
-        return fetch(url);
-      })
-    );
-    data.forEach((dt) => console.log(dt.json));
-  };
-  getData();
+  async function fetchData() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const data = await response.json();
+    console.log(data);
+  }
+  fetchData();
 } catch (err) {
   console.log('oops', err);
 }
